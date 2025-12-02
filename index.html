@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fitgym — Your Fitness Companion</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="logo">Fitgym</div>
+    <nav>
+      <a href="#plans">Plans</a>
+      <a href="#bmi">BMI</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button id="themeToggle" aria-label="Toggle theme">🌙</button>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Stronger habits. Better you.</h1>
+      <p>Simple plans, smart tracking, and tools to make fitness stick.</p>
+      <a class="cta" href="#plans">Explore Plans</a>
+    </div>
+    <div class="hero-img" role="img" aria-label="Person exercising"></div>
+  </section>
+
+  <main>
+    <section id="plans" class="section">
+      <h2>Workout plans</h2>
+      <div class="cards" id="planCards">
+        <!-- Cards populated via JavaScript -->
+      </div>
+    </section>
+
+    <section id="bmi" class="section grid">
+      <div>
+        <h2>BMI calculator</h2>
+        <form id="bmiForm" class="card">
+          <label>
+            Height (cm)
+            <input type="number" id="height" min="100" max="250" required />
+          </label>
+          <label>
+            Weight (kg)
+            <input type="number" id="weight" min="30" max="250" required />
+          </label>
+          <button type="submit">Calculate</button>
+          <div id="bmiResult" class="result"></div>
+        </form>
+      </div>
+      <div class="card">
+        <h3>Understanding BMI</h3>
+        <ul class="bmi-range">
+          <li><strong>Underweight:</strong> &lt; 18.5</li>
+          <li><strong>Normal:</strong> 18.5–24.9</li>
+          <li><strong>Overweight:</strong> 25–29.9</li>
+          <li><strong>Obese:</strong> ≥ 30</li>
+        </ul>
+        <p>Use BMI as a general guide. Focus on strength, endurance, and how you feel.</p>
+      </div>
+    </section>
+
+    <section id="schedule" class="section">
+      <h2>Weekly schedule</h2>
+      <p class="muted">Plan your week and track completed workouts.</p>
+      <div class="schedule">
+        <div class="schedule-grid" id="scheduleGrid">
+          <!-- Populated via JavaScript -->
+        </div>
+        <form id="addWorkoutForm" class="card inline">
+          <label>
+            Day
+            <select id="daySelect">
+              <option>Monday</option><option>Tuesday</option><option>Wednesday</option>
+              <option>Thursday</option><option>Friday</option><option>Saturday</option><option>Sunday</option>
+            </select>
+          </label>
+          <label>
+            Workout
+            <input type="text" id="workoutInput" placeholder="e.g., Upper body strength" required />
+          </label>
+          <button type="submit">Add</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <form id="contactForm" class="card">
+        <label>
+          Name
+          <input type="text" id="name" required />
+        </label>
+        <label>
+          Email
+          <input type="email" id="email" required />
+        </label>
+        <label>
+          Message
+          <textarea id="message" rows="4" required></textarea>
+        </label>
+        <button type="submit">Send</button>
+        <div id="contactStatus" class="result"></div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Fitgym.Designed by <b>Dandison</b>. Train smart. Live well.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
